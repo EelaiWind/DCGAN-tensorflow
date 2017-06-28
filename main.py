@@ -62,10 +62,10 @@ def main(_):
     else:
       dcgan = DCGAN(
           sess,
-          input_width=FLAGS.input_width,
-          input_height=FLAGS.input_height,
-          output_width=FLAGS.output_width,
-          output_height=FLAGS.output_height,
+          input_width=19, #FLAGS.input_width,
+          input_height=19, #FLAGS.input_height,
+          output_width=19, #FLAGS.output_width,
+          output_height=19, #FLAGS.output_height,
           batch_size=FLAGS.batch_size,
           sample_num=FLAGS.batch_size,
           dataset_name=FLAGS.dataset,
@@ -81,7 +81,7 @@ def main(_):
     else:
       if not dcgan.load(FLAGS.checkpoint_dir)[0]:
         raise Exception("[!] Train a model first, then run test mode")
-      
+
 
     # to_json("./web/js/layers.js", [dcgan.h0_w, dcgan.h0_b, dcgan.g_bn0],
     #                 [dcgan.h1_w, dcgan.h1_b, dcgan.g_bn1],
